@@ -1,0 +1,160 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace AbletonPush2 {
+
+    public static class Parts {
+        public enum Message {
+            Note,
+            CC
+        }
+
+        public enum PartID {
+            PadS8T1,
+            PadS8T2,
+            PadS8T3,
+            PadS8T4,
+            PadS8T5,
+            PadS8T6,
+            PadS8T7,
+            PadS8T8,
+            PadS7T1,
+            PadS7T2,
+            PadS7T3,
+            PadS7T4,
+            PadS7T5,
+            PadS7T6,
+            PadS7T7,
+            PadS7T8,
+            PadS6T1,
+            PadS6T2,
+            PadS6T3,
+            PadS6T4,
+            PadS6T5,
+            PadS6T6,
+            PadS6T7,
+            PadS6T8,
+            PadS5T1,
+            PadS5T2,
+            PadS5T3,
+            PadS5T4,
+            PadS5T5,
+            PadS5T6,
+            PadS5T7,
+            PadS5T8,
+            PadS4T1,
+            PadS4T2,
+            PadS4T3,
+            PadS4T4,
+            PadS4T5,
+            PadS4T6,
+            PadS4T7,
+            PadS4T8,
+            PadS3T1,
+            PadS3T2,
+            PadS3T3,
+            PadS3T4,
+            PadS3T5,
+            PadS3T6,
+            PadS3T7,
+            PadS3T8,
+            PadS2T1,
+            PadS2T2,
+            PadS2T3,
+            PadS2T4,
+            PadS2T5,
+            PadS2T6,
+            PadS2T7,
+            PadS2T8,
+            PadS1T1,
+            PadS1T2,
+            PadS1T3,
+            PadS1T4,
+            PadS1T5,
+            PadS1T6,
+            PadS1T7,
+            PadS1T8,
+        }
+
+        public static List<Pad> Pads = new List<Pad> {
+            new Pad { id = PartID.PadS8T1, number = 36, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS8T2, number = 37, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS8T3, number = 38, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS8T4, number = 39, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS8T5, number = 40, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS8T6, number = 41, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS8T7, number = 42, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS8T8, number = 43, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS7T1, number = 44, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS7T2, number = 45, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS7T3, number = 46, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS7T4, number = 47, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS7T5, number = 48, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS7T6, number = 49, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS7T7, number = 50, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS7T8, number = 51, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS6T1, number = 52, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS6T2, number = 53, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS6T3, number = 54, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS6T4, number = 55, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS6T5, number = 56, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS6T6, number = 57, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS6T7, number = 58, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS6T8, number = 59, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS5T1, number = 60, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS5T2, number = 61, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS5T3, number = 62, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS5T4, number = 63, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS5T5, number = 64, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS5T6, number = 65, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS5T7, number = 66, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS5T8, number = 67, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS4T1, number = 68, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS4T2, number = 69, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS4T3, number = 70, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS4T4, number = 71, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS4T5, number = 72, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS4T6, number = 73, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS4T7, number = 74, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS4T8, number = 75, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS3T1, number = 76, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS3T2, number = 77, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS3T3, number = 78, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS3T4, number = 79, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS3T5, number = 80, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS3T6, number = 81, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS3T7, number = 82, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS3T8, number = 83, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS2T1, number = 84, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS2T2, number = 85, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS2T3, number = 86, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS2T4, number = 87, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS2T5, number = 88, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS2T6, number = 89, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS2T7, number = 90, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS2T8, number = 91, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS1T1, number = 92, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS1T2, number = 93, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS1T3, number = 94, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS1T4, number = 95, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS1T5, number = 96, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS1T6, number = 97, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS1T7, number = 98, message = Message.Note, color = true },
+            new Pad { id = PartID.PadS1T8, number = 99, message = Message.Note, color = true },
+        };
+
+        public class Part {
+            public PartID id;
+            public int number;
+            public Message message;
+
+        }
+
+        public class Pad : Part {
+
+            public Boolean color;
+        }
+
+    }
+}

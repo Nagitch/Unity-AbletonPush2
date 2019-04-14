@@ -16,15 +16,15 @@ MIDI interface for controls Ableton Push2 from Unity.
 
 ## API Reference
 
-### Notes
+### Note
 
 API specification is based on [Push2 interface official documentation](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc).
 
-and also Parts/controls namings are based on this resource [Push2-map.json](https://github.com/Ableton/push-interface/blob/master/doc/Push2-map.json).
+and also parts/controls namings are based on this resource [Push2-map.json](https://github.com/Ableton/push-interface/blob/master/doc/Push2-map.json).
 
-PadS8T1 = the pad of bottom, left corner positioned.
-PadS8T2 = the pad of bottom, left +1 right positioned.
-PadS1T8 = the pad of top, right positioned.
+- PadS8T1 = the pad of bottom, left corner positioned.
+- PadS8T2 = the pad of bottom, left +1 right positioned.
+- PadS1T8 = the pad of top, right positioned.
 
 ### Receive messages from Push 2
 
@@ -56,9 +56,9 @@ Their delegates are available.
 
 ### Pad / Button LEDs
 
-- SetLEDLight(LED, LEDColor, LEDAnimation = LEDAnimation.None)
+- SetLED(LED, LEDColor, LEDAnimation = LEDAnimation.None)
 
-  Turn LED light on / off. LEDAnimation is selectable below, based on [this section of Push2 spec document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#LED%20Animation).
+  Turn LED light on / off. LEDAnimation is selectable below, based on [this section in Push2 spec document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#LED%20Animation).
   - None (stop transition)
   - 1shot24th
   - 1shot16th
@@ -82,13 +82,13 @@ Example
 using AbletonPush2;
 // ...
     // Turn on all pad LEDs.
-    SetLEDLight(LED.Pad.All, LEDColor.RGB.White, LEDAnimation.TurnOn);
+    SetLED(LED.Pad.All, LEDColor.RGB.White, LEDAnimation.TurnOn);
     // 
-    SetLEDLight(LED.Pad.S8T1, LEDColor.RGB.Red, LEDAnimation.Blinking16th);
+    SetLED(LED.Pad.S8T1, LEDColor.RGB.Red, LEDAnimation.Blinking16th);
     // turn off TapTempo button LED. LEDColor Black means turn off
-    SetLEDLight(LED.Button.TapTempo, LEDColor.Mono.Black);
+    SetLED(LED.Button.TapTempo, LEDColor.Mono.Black);
     // 
-    SetLEDLight(LED.Button.UpperRow1, LEDColor.Black);
+    SetLED(LED.Button.UpperRow1, LEDColor.Black);
 ```
 
 `LEDColor.RGB.xxx` is available only RGBLEDs. you can see what button/control has RGBLED in here. [Push Interface document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#MIDI%20Mapping)
