@@ -58,8 +58,23 @@ Their delegates are available.
 
 - SetLEDLight(LED, LEDColor, LEDAnimation = LEDAnimation.None)
 
-  Turn LED light on / off. LEDAnimation is selectable below
-  - TurnOn 
+  Turn LED light on / off. LEDAnimation is selectable below, based on [this section of Push2 spec document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#LED%20Animation).
+  - None (stop transition)
+  - 1shot24th
+  - 1shot16th
+  - 1shot8th
+  - 1shotQuarter
+  - 1shotHalf
+  - Pulsing24th
+  - Pulsing12th
+  - Pulsing8th
+  - PulsingQuarter
+  - PulsingHalf
+  - Blinking24th
+  - Blinking16th
+  - Blinking8th
+  - BlinkingQuarter
+  - Blinking24Half
 
 Example
 
@@ -76,4 +91,4 @@ using AbletonPush2;
     SetLEDLight(LED.Button.UpperRow1, LEDColor.Black);
 ```
 
-`LEDColor.RGB.xxx` is available only RGBLEDs. you can see the what button/control has RGBLED from here. [Push Interface document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#MIDI%20Mapping)
+`LEDColor.RGB.xxx` is available only RGBLEDs. you can see what button/control has RGBLED in here. [Push Interface document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#MIDI%20Mapping)
