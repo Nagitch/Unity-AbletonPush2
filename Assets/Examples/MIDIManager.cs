@@ -6,21 +6,21 @@ using UnityEngine.UI;
 using System.Runtime.InteropServices;
 
 public class MIDIManager : MonoBehaviour {
-    private List<MidiInDevice> midiInDevices;
-    public List<MidiInDevice> MidiInDevices{ get{ return midiInDevices; } }
-    public int midiInDeviceCount;
-    private List<MidiOutDevice> midiOutDevices;
-    public List<MidiOutDevice> MidiOutDevices{ get{ return midiOutDevices; } }
-    public int midiOutDeviceCount;
+    private static List<MidiDevice> midiInDevices;
+    public static List<MidiDevice> MidiInDevices{ get{ return midiInDevices; } }
+    public static int midiInDeviceCount;
+    private static List<MidiDevice> midiOutDevices;
+    public static List<MidiDevice> MidiOutDevices{ get{ return midiOutDevices; } }
+    public static int midiOutDeviceCount;
 
-    public class MidiInDevice {
+    public class MidiDevice {
         private uint id;
         public uint Id{ get{ return id; } }
 
         private string name;
         public string Name{ get{ return name;} }
 
-        public MidiInDevice(uint id, string name) {
+        public MidiDevice(uint id, string name) {
             this.id = id;
             this.name = name;
         }
@@ -30,30 +30,13 @@ public class MIDIManager : MonoBehaviour {
         }
     };
 
-    public class MidiOutDevice {
-        private uint id;
-        public uint Id{ get{ return id; } }
-
-        private string name;
-        public string Name{ get{ return name;} }
-
-        public MidiOutDevice(uint id, string name) {
-            this.id = id;
-            this.name = name;
-        }
-
-        public override string ToString() {
-            return id.ToString("X8") + ": " + name;
-        }
-    }
-
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
     void Awake()
     {
-        midiInDevices = new List<MidiInDevice>();
-        midiOutDevices = new List<MidiOutDevice>();
+        midiInDevices = new List<MidiDevice>();
+        midiOutDevices = new List<MidiDevice>();
     }
 
 	// Use this for initialization
@@ -73,14 +56,14 @@ public class MIDIManager : MonoBehaviour {
         {
             var id = GetEndpointIdAtIndex(i);
             var name = GetInEndpointName(id);
-            MidiInDevice mi = new MidiInDevice(id, name);
+            MidiDevice mi = new MidiDevice(id, name);
             midiInDevices.Add(mi);
         }
         for (var i = 0; i < endpointCountSend; i++)
         {
             var id = GetSendEndpointIdAtIndex(i);
             var name = GetSendEndpointName(id);
-            MidiOutDevice mo = new MidiOutDevice(id, name);
+            MidiDevice mo = new MidiDevice(id, name);
             midiOutDevices.Add(mo);
         }
 	}
