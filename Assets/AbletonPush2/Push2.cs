@@ -2,23 +2,29 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace AbletonPush2 {
-    public static class Push2 {
+namespace AbletonPush2
+{
+    public static class Push2
+    {
         public static uint MidiInDeviceId;
         public static uint MidiOutDeviceId;
 
-        public static void SetDevice (uint midiInDeviceId, uint midiOutDeviceId) {
+        public static void SetDevice(uint midiInDeviceId, uint midiOutDeviceId)
+        {
             MidiInDeviceId = midiInDeviceId;
             MidiOutDeviceId = midiOutDeviceId;
         }
 
-        public static void SetMidiInDevice (uint deviceId) {
+        public static void SetMidiInDevice(uint deviceId)
+        {
             MidiInDeviceId = deviceId;
         }
-        public static void SetMidiOutDevice (uint deviceId) {
+        public static void SetMidiOutDevice(uint deviceId)
+        {
             MidiOutDeviceId = deviceId;
         }
-        public static PadStatus GetPad () {
+        public static PadStatus GetPad()
+        {
             return null;
         }
     }
