@@ -10,9 +10,19 @@ namespace AbletonPush2
         public enum Message
         {
             Note,
-            CC
+            CC,
+            PichBend,
         }
 
+        public class Part
+        {
+            public string name = null;
+            public int number;
+            public Message message;
+            public Boolean? color = null;
+        }
+
+        public class Pad : Part { }
         public static class Pads
         {
             public static Pad S8T1 = new Pad { number = 36, message = Message.Note, color = true, name = "Pad S8 T1", };
@@ -81,6 +91,7 @@ namespace AbletonPush2
             public static Pad S1T8 = new Pad { number = 99, message = Message.Note, color = true, name = "Pad S1 T8", };
         };
 
+        public class Button : Part { }
         public static class Buttons
         {
             public static Button TapTempo = new Button { number = 3, message = Message.CC, color = false, name = "Tap Tempo" };
@@ -150,6 +161,13 @@ namespace AbletonPush2
             public static Button Select = new Button { number = 48, message = Message.CC, color = false, name = "Select" };
         }
 
+        public class RotaryEncoder : Part
+        {
+            public int position;
+            public Touch touch;
+        }
+
+        public class Touch : Part { }
         public static class RotaryEncoders
         {
             public static RotaryEncoder TempoEncoder = new RotaryEncoder { number = 14, message = Message.CC, position = 1, name = "Tempo Encoder", touch = new Touch { number = 10, message = Message.CC } };
@@ -164,35 +182,8 @@ namespace AbletonPush2
             public static RotaryEncoder Track8Encoder = new RotaryEncoder { number = 78, message = Message.CC, position = 10, name = "Track8 Encoder", touch = new Touch { number = 7, message = Message.CC } };
             public static RotaryEncoder MasterEncoder = new RotaryEncoder { number = 79, message = Message.CC, position = 11, name = "Master Encoder", touch = new Touch { number = 8, message = Message.CC } };
         }
-        public class Part
-        {
-            public int number;
-            public Message message;
-        }
 
-        public class Pad : Part
-        {
-
-            public string name;
-            public Boolean color;
-        }
-
-        public class Button : Part
-        {
-            public string name;
-            public Boolean color;
-        }
-
-        public class RotaryEncoder : Part
-        {
-            public string name;
-            public int position;
-            public Touch touch;
-        }
-
-        public class Touch : Part
-        {
-        }
-
+        public class _Slider : Part { }
+        public static _Slider Slider = new _Slider { number = 12, message = Message.PichBend, name = "Slider", };
     }
 }
