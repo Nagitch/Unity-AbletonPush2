@@ -22,9 +22,9 @@ API specification is based on [Push2 interface official documentation](https://g
 
 and also parts/controls namings are based on this resource [Push2-map.json](https://github.com/Ableton/push-interface/blob/master/doc/Push2-map.json).
 
-- PadS8T1 = the pad of bottom, left corner positioned.
-- PadS8T2 = the pad of bottom, left +1 right positioned.
-- PadS1T8 = the pad of top, right positioned.
+- Pad.S8T1 = the pad of bottom, left corner positioned.
+- Pad.S8T2 = the pad of bottom, left +1 right positioned.
+- Pad.S1T8 = the pad of top, right positioned.
 
 ### Receive messages from Push 2
 
@@ -56,9 +56,9 @@ Their delegates are available.
 
 ### Pad / Button LEDs
 
-- SetLED(LED, LEDColor, LEDAnimation = LEDAnimation.None)
+- SetLED(Part\[Pad|Button\], LEDColor, LEDAnimation = LEDAnimation.None)
 
-  Turn LED light on / off. LEDAnimation is selectable below, based on [this section in Push2 spec document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#LED%20Animation).
+  Turn LED on / off. LEDAnimation is selectable below, based on [this section in Push2 spec document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#LED%20Animation).
   - None (stop transition)
   - 1shot24th
   - 1shot16th

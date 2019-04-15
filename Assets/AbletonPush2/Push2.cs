@@ -23,7 +23,7 @@ namespace AbletonPush2
         {
             MidiOutDeviceId = deviceId;
         }
-        public static PadStatus GetPad()
+        public static Pad GetPad()
         {
             return null;
         }
