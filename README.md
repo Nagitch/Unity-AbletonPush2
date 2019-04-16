@@ -5,7 +5,8 @@ MIDI interface for controls Ableton Push2 from Unity.
 
 ## Limitations
 
-- API cannot switch Push2 mode (Live/User/Dual mode) itself. This means you can't run your project and Ableton Live in same time.
+- API cannot recognize MIDI IN devices individually. it means API can't identify what device sends MIDI message to Unity. (from Push2, or another one) so, e.g. connected Push2 and MIDI keyboard in same time, then you play keyboard, GetPad(Pad) might returns the value.
+- API cannot switch Push2 mode (Live/User/Dual mode) itself. it means you can't run your project and Ableton Live in same time.
 - touch strip configuration is not modifiable.
 - Pad LED's color pallet is not modifiable.
 

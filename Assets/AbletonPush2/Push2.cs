@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using MidiJack;
 
 namespace AbletonPush2
 {
@@ -23,9 +24,9 @@ namespace AbletonPush2
         {
             MidiOutDeviceId = deviceId;
         }
-        public static Pad GetPad()
+        public static float GetPad(Pad pad)
         {
-            return null;
+            return MidiMaster.GetKey(pad.number);
         }
     }
 }
