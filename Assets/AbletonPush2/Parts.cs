@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace AbletonPush2
 {
+    /// <summary>
+    /// all definition of parts pads, buttons...
+    /// </summary>
     public enum Message
     {
         Note,
@@ -19,9 +22,78 @@ namespace AbletonPush2
         public Boolean? color = null;
     }
 
-    public class Pad : Part { }
+    public class Pad : Part
+    {
+        public float? pressure; // off=0.0 to max=1.0
+    }
     public static class Pads
     {
+        public static List<Pad> All = new List<Pad> {
+            Pads.S8T1,
+            Pads.S8T2,
+            Pads.S8T3,
+            Pads.S8T4,
+            Pads.S8T5,
+            Pads.S8T6,
+            Pads.S8T7,
+            Pads.S8T8,
+            Pads.S7T1,
+            Pads.S7T2,
+            Pads.S7T3,
+            Pads.S7T4,
+            Pads.S7T5,
+            Pads.S7T6,
+            Pads.S7T7,
+            Pads.S7T8,
+            Pads.S6T1,
+            Pads.S6T2,
+            Pads.S6T3,
+            Pads.S6T4,
+            Pads.S6T5,
+            Pads.S6T6,
+            Pads.S6T7,
+            Pads.S6T8,
+            Pads.S5T1,
+            Pads.S5T2,
+            Pads.S5T3,
+            Pads.S5T4,
+            Pads.S5T5,
+            Pads.S5T6,
+            Pads.S5T7,
+            Pads.S5T8,
+            Pads.S4T1,
+            Pads.S4T2,
+            Pads.S4T3,
+            Pads.S4T4,
+            Pads.S4T5,
+            Pads.S4T6,
+            Pads.S4T7,
+            Pads.S4T8,
+            Pads.S3T1,
+            Pads.S3T2,
+            Pads.S3T3,
+            Pads.S3T4,
+            Pads.S3T5,
+            Pads.S3T6,
+            Pads.S3T7,
+            Pads.S3T8,
+            Pads.S2T1,
+            Pads.S2T2,
+            Pads.S2T3,
+            Pads.S2T4,
+            Pads.S2T5,
+            Pads.S2T6,
+            Pads.S2T7,
+            Pads.S2T8,
+            Pads.S1T1,
+            Pads.S1T2,
+            Pads.S1T3,
+            Pads.S1T4,
+            Pads.S1T5,
+            Pads.S1T6,
+            Pads.S1T7,
+            Pads.S1T8,
+        };
         public static Pad S8T1 = new Pad { number = 36, message = Message.Note, color = true, name = "Pad S8 T1", };
         public static Pad S8T2 = new Pad { number = 37, message = Message.Note, color = true, name = "Pad S8 T2", };
         public static Pad S8T3 = new Pad { number = 38, message = Message.Note, color = true, name = "Pad S8 T3", };
@@ -88,7 +160,10 @@ namespace AbletonPush2
         public static Pad S1T8 = new Pad { number = 99, message = Message.Note, color = true, name = "Pad S1 T8", };
     };
 
-    public class Button : Part { }
+    public class Button : Part
+    {
+        public Boolean? pressed; // true as pressed
+    }
     public static class Buttons
     {
         public static Button TapTempo = new Button { number = 3, message = Message.CC, color = false, name = "Tap Tempo" };
@@ -107,6 +182,17 @@ namespace AbletonPush2
         public static Button Automate = new Button { number = 89, message = Message.CC, color = true, name = "Automate" };
         public static Button Record = new Button { number = 86, message = Message.CC, color = true, name = "Record" };
         public static Button Play = new Button { number = 85, message = Message.CC, color = true, name = "Play" };
+        public static List<Button> UpperRowAll = new List<Button>
+        {
+            Buttons.UpperRow1,
+            Buttons.UpperRow2,
+            Buttons.UpperRow3,
+            Buttons.UpperRow4,
+            Buttons.UpperRow5,
+            Buttons.UpperRow6,
+            Buttons.UpperRow7,
+            Buttons.UpperRow8,
+        };
         public static Button UpperRow1 = new Button { number = 102, message = Message.CC, color = true, name = "Upper Row 1" };
         public static Button UpperRow2 = new Button { number = 103, message = Message.CC, color = true, name = "Upper Row 2" };
         public static Button UpperRow3 = new Button { number = 104, message = Message.CC, color = true, name = "Upper Row 3" };
@@ -115,6 +201,18 @@ namespace AbletonPush2
         public static Button UpperRow6 = new Button { number = 107, message = Message.CC, color = true, name = "Upper Row 6" };
         public static Button UpperRow7 = new Button { number = 108, message = Message.CC, color = true, name = "Upper Row 7" };
         public static Button UpperRow8 = new Button { number = 109, message = Message.CC, color = true, name = "Upper Row 8" };
+
+        public static List<Button> LowerRowAll = new List<Button>
+        {
+            Buttons.LowerRow1,
+            Buttons.LowerRow2,
+            Buttons.LowerRow3,
+            Buttons.LowerRow4,
+            Buttons.LowerRow5,
+            Buttons.LowerRow6,
+            Buttons.LowerRow7,
+            Buttons.LowerRow8,
+        };
         public static Button LowerRow1 = new Button { number = 20, message = Message.CC, color = true, name = "Lower Row 1" };
         public static Button LowerRow2 = new Button { number = 21, message = Message.CC, color = true, name = "Lower Row 2" };
         public static Button LowerRow3 = new Button { number = 22, message = Message.CC, color = true, name = "Lower Row 3" };
@@ -123,6 +221,17 @@ namespace AbletonPush2
         public static Button LowerRow6 = new Button { number = 25, message = Message.CC, color = true, name = "Lower Row 6" };
         public static Button LowerRow7 = new Button { number = 26, message = Message.CC, color = true, name = "Lower Row 7" };
         public static Button LowerRow8 = new Button { number = 27, message = Message.CC, color = true, name = "Lower Row 8" };
+        public static List<Button> OnePerAll = new List<Button>
+        {
+            Buttons.OnePer32t,
+            Buttons.OnePer32,
+            Buttons.OnePer16t,
+            Buttons.OnePer16,
+            Buttons.OnePer8t,
+            Buttons.OnePer8,
+            Buttons.OnePer4t,
+            Buttons.OnePer4,
+        };
         public static Button OnePer32t = new Button { number = 43, message = Message.CC, color = true, name = "1/32t" };
         public static Button OnePer32 = new Button { number = 42, message = Message.CC, color = true, name = "1/32" };
         public static Button OnePer16t = new Button { number = 41, message = Message.CC, color = true, name = "1/16t" };
@@ -160,11 +269,15 @@ namespace AbletonPush2
 
     public class RotaryEncoder : Part
     {
+        public float? step; // turned step 0.0-1.0, minus as left
         public int position;
         public Touch touch;
     }
 
-    public class Touch : Part { }
+    public class Touch : Part
+    {
+        public Boolean? touched; // true as touched
+    }
     public static class RotaryEncoders
     {
         public static RotaryEncoder TempoEncoder = new RotaryEncoder { number = 14, message = Message.CC, position = 1, name = "Tempo Encoder", touch = new Touch { number = 10, message = Message.CC } };
@@ -182,6 +295,8 @@ namespace AbletonPush2
 
     public static class Slider
     {
+        public static Boolean? touched; // true as touched
+        public static float? bend; // -1.0 to 1.0
         public static int number = 12;
         public static Message message = Message.PichBend;
         public static string name = "Slider";
