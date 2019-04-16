@@ -28,5 +28,9 @@ namespace AbletonPush2
         {
             return MidiMaster.GetKey(pad.number);
         }
+
+        public static void SetLED(Part part)
+        {
+        }
     }
 }

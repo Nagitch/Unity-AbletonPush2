@@ -28,6 +28,71 @@ namespace AbletonPush2
     }
     public static class Pads
     {
+        public static Pad S8T1 = new Pad { number = 36, message = Message.Note, color = true, name = "Pad S8 T1", };
+        public static Pad S8T2 = new Pad { number = 37, message = Message.Note, color = true, name = "Pad S8 T2", };
+        public static Pad S8T3 = new Pad { number = 38, message = Message.Note, color = true, name = "Pad S8 T3", };
+        public static Pad S8T4 = new Pad { number = 39, message = Message.Note, color = true, name = "Pad S8 T4", };
+        public static Pad S8T5 = new Pad { number = 40, message = Message.Note, color = true, name = "Pad S8 T5", };
+        public static Pad S8T6 = new Pad { number = 41, message = Message.Note, color = true, name = "Pad S8 T6", };
+        public static Pad S8T7 = new Pad { number = 42, message = Message.Note, color = true, name = "Pad S8 T7", };
+        public static Pad S8T8 = new Pad { number = 43, message = Message.Note, color = true, name = "Pad S8 T8", };
+        public static Pad S7T1 = new Pad { number = 44, message = Message.Note, color = true, name = "Pad S7 T1", };
+        public static Pad S7T2 = new Pad { number = 45, message = Message.Note, color = true, name = "Pad S7 T2", };
+        public static Pad S7T3 = new Pad { number = 46, message = Message.Note, color = true, name = "Pad S7 T3", };
+        public static Pad S7T4 = new Pad { number = 47, message = Message.Note, color = true, name = "Pad S7 T4", };
+        public static Pad S7T5 = new Pad { number = 48, message = Message.Note, color = true, name = "Pad S7 T5", };
+        public static Pad S7T6 = new Pad { number = 49, message = Message.Note, color = true, name = "Pad S7 T6", };
+        public static Pad S7T7 = new Pad { number = 50, message = Message.Note, color = true, name = "Pad S7 T7", };
+        public static Pad S7T8 = new Pad { number = 51, message = Message.Note, color = true, name = "Pad S7 T8", };
+        public static Pad S6T1 = new Pad { number = 52, message = Message.Note, color = true, name = "Pad S6 T1", };
+        public static Pad S6T2 = new Pad { number = 53, message = Message.Note, color = true, name = "Pad S6 T2", };
+        public static Pad S6T3 = new Pad { number = 54, message = Message.Note, color = true, name = "Pad S6 T3", };
+        public static Pad S6T4 = new Pad { number = 55, message = Message.Note, color = true, name = "Pad S6 T4", };
+        public static Pad S6T5 = new Pad { number = 56, message = Message.Note, color = true, name = "Pad S6 T5", };
+        public static Pad S6T6 = new Pad { number = 57, message = Message.Note, color = true, name = "Pad S6 T6", };
+        public static Pad S6T7 = new Pad { number = 58, message = Message.Note, color = true, name = "Pad S6 T7", };
+        public static Pad S6T8 = new Pad { number = 59, message = Message.Note, color = true, name = "Pad S6 T8", };
+        public static Pad S5T1 = new Pad { number = 60, message = Message.Note, color = true, name = "Pad S5 T1", };
+        public static Pad S5T2 = new Pad { number = 61, message = Message.Note, color = true, name = "Pad S5 T2", };
+        public static Pad S5T3 = new Pad { number = 62, message = Message.Note, color = true, name = "Pad S5 T3", };
+        public static Pad S5T4 = new Pad { number = 63, message = Message.Note, color = true, name = "Pad S5 T4", };
+        public static Pad S5T5 = new Pad { number = 64, message = Message.Note, color = true, name = "Pad S5 T5", };
+        public static Pad S5T6 = new Pad { number = 65, message = Message.Note, color = true, name = "Pad S5 T6", };
+        public static Pad S5T7 = new Pad { number = 66, message = Message.Note, color = true, name = "Pad S5 T7", };
+        public static Pad S5T8 = new Pad { number = 67, message = Message.Note, color = true, name = "Pad S5 T8", };
+        public static Pad S4T1 = new Pad { number = 68, message = Message.Note, color = true, name = "Pad S4 T1", };
+        public static Pad S4T2 = new Pad { number = 69, message = Message.Note, color = true, name = "Pad S4 T2", };
+        public static Pad S4T3 = new Pad { number = 70, message = Message.Note, color = true, name = "Pad S4 T3", };
+        public static Pad S4T4 = new Pad { number = 71, message = Message.Note, color = true, name = "Pad S4 T4", };
+        public static Pad S4T5 = new Pad { number = 72, message = Message.Note, color = true, name = "Pad S4 T5", };
+        public static Pad S4T6 = new Pad { number = 73, message = Message.Note, color = true, name = "Pad S4 T6", };
+        public static Pad S4T7 = new Pad { number = 74, message = Message.Note, color = true, name = "Pad S4 T7", };
+        public static Pad S4T8 = new Pad { number = 75, message = Message.Note, color = true, name = "Pad S4 T8", };
+        public static Pad S3T1 = new Pad { number = 76, message = Message.Note, color = true, name = "Pad S3 T1", };
+        public static Pad S3T2 = new Pad { number = 77, message = Message.Note, color = true, name = "Pad S3 T2", };
+        public static Pad S3T3 = new Pad { number = 78, message = Message.Note, color = true, name = "Pad S3 T3", };
+        public static Pad S3T4 = new Pad { number = 79, message = Message.Note, color = true, name = "Pad S3 T4", };
+        public static Pad S3T5 = new Pad { number = 80, message = Message.Note, color = true, name = "Pad S3 T5", };
+        public static Pad S3T6 = new Pad { number = 81, message = Message.Note, color = true, name = "Pad S3 T6", };
+        public static Pad S3T7 = new Pad { number = 82, message = Message.Note, color = true, name = "Pad S3 T7", };
+        public static Pad S3T8 = new Pad { number = 83, message = Message.Note, color = true, name = "Pad S3 T8", };
+        public static Pad S2T1 = new Pad { number = 84, message = Message.Note, color = true, name = "Pad S2 T1", };
+        public static Pad S2T2 = new Pad { number = 85, message = Message.Note, color = true, name = "Pad S2 T2", };
+        public static Pad S2T3 = new Pad { number = 86, message = Message.Note, color = true, name = "Pad S2 T3", };
+        public static Pad S2T4 = new Pad { number = 87, message = Message.Note, color = true, name = "Pad S2 T4", };
+        public static Pad S2T5 = new Pad { number = 88, message = Message.Note, color = true, name = "Pad S2 T5", };
+        public static Pad S2T6 = new Pad { number = 89, message = Message.Note, color = true, name = "Pad S2 T6", };
+        public static Pad S2T7 = new Pad { number = 90, message = Message.Note, color = true, name = "Pad S2 T7", };
+        public static Pad S2T8 = new Pad { number = 91, message = Message.Note, color = true, name = "Pad S2 T8", };
+        public static Pad S1T1 = new Pad { number = 92, message = Message.Note, color = true, name = "Pad S1 T1", };
+        public static Pad S1T2 = new Pad { number = 93, message = Message.Note, color = true, name = "Pad S1 T2", };
+        public static Pad S1T3 = new Pad { number = 94, message = Message.Note, color = true, name = "Pad S1 T3", };
+        public static Pad S1T4 = new Pad { number = 95, message = Message.Note, color = true, name = "Pad S1 T4", };
+        public static Pad S1T5 = new Pad { number = 96, message = Message.Note, color = true, name = "Pad S1 T5", };
+        public static Pad S1T6 = new Pad { number = 97, message = Message.Note, color = true, name = "Pad S1 T6", };
+        public static Pad S1T7 = new Pad { number = 98, message = Message.Note, color = true, name = "Pad S1 T7", };
+        public static Pad S1T8 = new Pad { number = 99, message = Message.Note, color = true, name = "Pad S1 T8", };
+
         public static List<Pad> All = new List<Pad> {
             Pads.S8T1,
             Pads.S8T2,
@@ -94,70 +159,6 @@ namespace AbletonPush2
             Pads.S1T7,
             Pads.S1T8,
         };
-        public static Pad S8T1 = new Pad { number = 36, message = Message.Note, color = true, name = "Pad S8 T1", };
-        public static Pad S8T2 = new Pad { number = 37, message = Message.Note, color = true, name = "Pad S8 T2", };
-        public static Pad S8T3 = new Pad { number = 38, message = Message.Note, color = true, name = "Pad S8 T3", };
-        public static Pad S8T4 = new Pad { number = 39, message = Message.Note, color = true, name = "Pad S8 T4", };
-        public static Pad S8T5 = new Pad { number = 40, message = Message.Note, color = true, name = "Pad S8 T5", };
-        public static Pad S8T6 = new Pad { number = 41, message = Message.Note, color = true, name = "Pad S8 T6", };
-        public static Pad S8T7 = new Pad { number = 42, message = Message.Note, color = true, name = "Pad S8 T7", };
-        public static Pad S8T8 = new Pad { number = 43, message = Message.Note, color = true, name = "Pad S8 T8", };
-        public static Pad S7T1 = new Pad { number = 44, message = Message.Note, color = true, name = "Pad S7 T1", };
-        public static Pad S7T2 = new Pad { number = 45, message = Message.Note, color = true, name = "Pad S7 T2", };
-        public static Pad S7T3 = new Pad { number = 46, message = Message.Note, color = true, name = "Pad S7 T3", };
-        public static Pad S7T4 = new Pad { number = 47, message = Message.Note, color = true, name = "Pad S7 T4", };
-        public static Pad S7T5 = new Pad { number = 48, message = Message.Note, color = true, name = "Pad S7 T5", };
-        public static Pad S7T6 = new Pad { number = 49, message = Message.Note, color = true, name = "Pad S7 T6", };
-        public static Pad S7T7 = new Pad { number = 50, message = Message.Note, color = true, name = "Pad S7 T7", };
-        public static Pad S7T8 = new Pad { number = 51, message = Message.Note, color = true, name = "Pad S7 T8", };
-        public static Pad S6T1 = new Pad { number = 52, message = Message.Note, color = true, name = "Pad S6 T1", };
-        public static Pad S6T2 = new Pad { number = 53, message = Message.Note, color = true, name = "Pad S6 T2", };
-        public static Pad S6T3 = new Pad { number = 54, message = Message.Note, color = true, name = "Pad S6 T3", };
-        public static Pad S6T4 = new Pad { number = 55, message = Message.Note, color = true, name = "Pad S6 T4", };
-        public static Pad S6T5 = new Pad { number = 56, message = Message.Note, color = true, name = "Pad S6 T5", };
-        public static Pad S6T6 = new Pad { number = 57, message = Message.Note, color = true, name = "Pad S6 T6", };
-        public static Pad S6T7 = new Pad { number = 58, message = Message.Note, color = true, name = "Pad S6 T7", };
-        public static Pad S6T8 = new Pad { number = 59, message = Message.Note, color = true, name = "Pad S6 T8", };
-        public static Pad S5T1 = new Pad { number = 60, message = Message.Note, color = true, name = "Pad S5 T1", };
-        public static Pad S5T2 = new Pad { number = 61, message = Message.Note, color = true, name = "Pad S5 T2", };
-        public static Pad S5T3 = new Pad { number = 62, message = Message.Note, color = true, name = "Pad S5 T3", };
-        public static Pad S5T4 = new Pad { number = 63, message = Message.Note, color = true, name = "Pad S5 T4", };
-        public static Pad S5T5 = new Pad { number = 64, message = Message.Note, color = true, name = "Pad S5 T5", };
-        public static Pad S5T6 = new Pad { number = 65, message = Message.Note, color = true, name = "Pad S5 T6", };
-        public static Pad S5T7 = new Pad { number = 66, message = Message.Note, color = true, name = "Pad S5 T7", };
-        public static Pad S5T8 = new Pad { number = 67, message = Message.Note, color = true, name = "Pad S5 T8", };
-        public static Pad S4T1 = new Pad { number = 68, message = Message.Note, color = true, name = "Pad S4 T1", };
-        public static Pad S4T2 = new Pad { number = 69, message = Message.Note, color = true, name = "Pad S4 T2", };
-        public static Pad S4T3 = new Pad { number = 70, message = Message.Note, color = true, name = "Pad S4 T3", };
-        public static Pad S4T4 = new Pad { number = 71, message = Message.Note, color = true, name = "Pad S4 T4", };
-        public static Pad S4T5 = new Pad { number = 72, message = Message.Note, color = true, name = "Pad S4 T5", };
-        public static Pad S4T6 = new Pad { number = 73, message = Message.Note, color = true, name = "Pad S4 T6", };
-        public static Pad S4T7 = new Pad { number = 74, message = Message.Note, color = true, name = "Pad S4 T7", };
-        public static Pad S4T8 = new Pad { number = 75, message = Message.Note, color = true, name = "Pad S4 T8", };
-        public static Pad S3T1 = new Pad { number = 76, message = Message.Note, color = true, name = "Pad S3 T1", };
-        public static Pad S3T2 = new Pad { number = 77, message = Message.Note, color = true, name = "Pad S3 T2", };
-        public static Pad S3T3 = new Pad { number = 78, message = Message.Note, color = true, name = "Pad S3 T3", };
-        public static Pad S3T4 = new Pad { number = 79, message = Message.Note, color = true, name = "Pad S3 T4", };
-        public static Pad S3T5 = new Pad { number = 80, message = Message.Note, color = true, name = "Pad S3 T5", };
-        public static Pad S3T6 = new Pad { number = 81, message = Message.Note, color = true, name = "Pad S3 T6", };
-        public static Pad S3T7 = new Pad { number = 82, message = Message.Note, color = true, name = "Pad S3 T7", };
-        public static Pad S3T8 = new Pad { number = 83, message = Message.Note, color = true, name = "Pad S3 T8", };
-        public static Pad S2T1 = new Pad { number = 84, message = Message.Note, color = true, name = "Pad S2 T1", };
-        public static Pad S2T2 = new Pad { number = 85, message = Message.Note, color = true, name = "Pad S2 T2", };
-        public static Pad S2T3 = new Pad { number = 86, message = Message.Note, color = true, name = "Pad S2 T3", };
-        public static Pad S2T4 = new Pad { number = 87, message = Message.Note, color = true, name = "Pad S2 T4", };
-        public static Pad S2T5 = new Pad { number = 88, message = Message.Note, color = true, name = "Pad S2 T5", };
-        public static Pad S2T6 = new Pad { number = 89, message = Message.Note, color = true, name = "Pad S2 T6", };
-        public static Pad S2T7 = new Pad { number = 90, message = Message.Note, color = true, name = "Pad S2 T7", };
-        public static Pad S2T8 = new Pad { number = 91, message = Message.Note, color = true, name = "Pad S2 T8", };
-        public static Pad S1T1 = new Pad { number = 92, message = Message.Note, color = true, name = "Pad S1 T1", };
-        public static Pad S1T2 = new Pad { number = 93, message = Message.Note, color = true, name = "Pad S1 T2", };
-        public static Pad S1T3 = new Pad { number = 94, message = Message.Note, color = true, name = "Pad S1 T3", };
-        public static Pad S1T4 = new Pad { number = 95, message = Message.Note, color = true, name = "Pad S1 T4", };
-        public static Pad S1T5 = new Pad { number = 96, message = Message.Note, color = true, name = "Pad S1 T5", };
-        public static Pad S1T6 = new Pad { number = 97, message = Message.Note, color = true, name = "Pad S1 T6", };
-        public static Pad S1T7 = new Pad { number = 98, message = Message.Note, color = true, name = "Pad S1 T7", };
-        public static Pad S1T8 = new Pad { number = 99, message = Message.Note, color = true, name = "Pad S1 T8", };
     };
 
     public class Button : Part
@@ -182,6 +183,14 @@ namespace AbletonPush2
         public static Button Automate = new Button { number = 89, message = Message.CC, color = true, name = "Automate" };
         public static Button Record = new Button { number = 86, message = Message.CC, color = true, name = "Record" };
         public static Button Play = new Button { number = 85, message = Message.CC, color = true, name = "Play" };
+        public static Button UpperRow1 = new Button { number = 102, message = Message.CC, color = true, name = "Upper Row 1" };
+        public static Button UpperRow2 = new Button { number = 103, message = Message.CC, color = true, name = "Upper Row 2" };
+        public static Button UpperRow3 = new Button { number = 104, message = Message.CC, color = true, name = "Upper Row 3" };
+        public static Button UpperRow4 = new Button { number = 105, message = Message.CC, color = true, name = "Upper Row 4" };
+        public static Button UpperRow5 = new Button { number = 106, message = Message.CC, color = true, name = "Upper Row 5" };
+        public static Button UpperRow6 = new Button { number = 107, message = Message.CC, color = true, name = "Upper Row 6" };
+        public static Button UpperRow7 = new Button { number = 108, message = Message.CC, color = true, name = "Upper Row 7" };
+        public static Button UpperRow8 = new Button { number = 109, message = Message.CC, color = true, name = "Upper Row 8" };
         public static List<Button> UpperRowAll = new List<Button>
         {
             Buttons.UpperRow1,
@@ -193,14 +202,14 @@ namespace AbletonPush2
             Buttons.UpperRow7,
             Buttons.UpperRow8,
         };
-        public static Button UpperRow1 = new Button { number = 102, message = Message.CC, color = true, name = "Upper Row 1" };
-        public static Button UpperRow2 = new Button { number = 103, message = Message.CC, color = true, name = "Upper Row 2" };
-        public static Button UpperRow3 = new Button { number = 104, message = Message.CC, color = true, name = "Upper Row 3" };
-        public static Button UpperRow4 = new Button { number = 105, message = Message.CC, color = true, name = "Upper Row 4" };
-        public static Button UpperRow5 = new Button { number = 106, message = Message.CC, color = true, name = "Upper Row 5" };
-        public static Button UpperRow6 = new Button { number = 107, message = Message.CC, color = true, name = "Upper Row 6" };
-        public static Button UpperRow7 = new Button { number = 108, message = Message.CC, color = true, name = "Upper Row 7" };
-        public static Button UpperRow8 = new Button { number = 109, message = Message.CC, color = true, name = "Upper Row 8" };
+        public static Button LowerRow1 = new Button { number = 20, message = Message.CC, color = true, name = "Lower Row 1" };
+        public static Button LowerRow2 = new Button { number = 21, message = Message.CC, color = true, name = "Lower Row 2" };
+        public static Button LowerRow3 = new Button { number = 22, message = Message.CC, color = true, name = "Lower Row 3" };
+        public static Button LowerRow4 = new Button { number = 23, message = Message.CC, color = true, name = "Lower Row 4" };
+        public static Button LowerRow5 = new Button { number = 24, message = Message.CC, color = true, name = "Lower Row 5" };
+        public static Button LowerRow6 = new Button { number = 25, message = Message.CC, color = true, name = "Lower Row 6" };
+        public static Button LowerRow7 = new Button { number = 26, message = Message.CC, color = true, name = "Lower Row 7" };
+        public static Button LowerRow8 = new Button { number = 27, message = Message.CC, color = true, name = "Lower Row 8" };
 
         public static List<Button> LowerRowAll = new List<Button>
         {
@@ -213,14 +222,15 @@ namespace AbletonPush2
             Buttons.LowerRow7,
             Buttons.LowerRow8,
         };
-        public static Button LowerRow1 = new Button { number = 20, message = Message.CC, color = true, name = "Lower Row 1" };
-        public static Button LowerRow2 = new Button { number = 21, message = Message.CC, color = true, name = "Lower Row 2" };
-        public static Button LowerRow3 = new Button { number = 22, message = Message.CC, color = true, name = "Lower Row 3" };
-        public static Button LowerRow4 = new Button { number = 23, message = Message.CC, color = true, name = "Lower Row 4" };
-        public static Button LowerRow5 = new Button { number = 24, message = Message.CC, color = true, name = "Lower Row 5" };
-        public static Button LowerRow6 = new Button { number = 25, message = Message.CC, color = true, name = "Lower Row 6" };
-        public static Button LowerRow7 = new Button { number = 26, message = Message.CC, color = true, name = "Lower Row 7" };
-        public static Button LowerRow8 = new Button { number = 27, message = Message.CC, color = true, name = "Lower Row 8" };
+
+        public static Button OnePer32t = new Button { number = 43, message = Message.CC, color = true, name = "1/32t" };
+        public static Button OnePer32 = new Button { number = 42, message = Message.CC, color = true, name = "1/32" };
+        public static Button OnePer16t = new Button { number = 41, message = Message.CC, color = true, name = "1/16t" };
+        public static Button OnePer16 = new Button { number = 40, message = Message.CC, color = true, name = "1/16" };
+        public static Button OnePer8t = new Button { number = 39, message = Message.CC, color = true, name = "1/8t" };
+        public static Button OnePer8 = new Button { number = 38, message = Message.CC, color = true, name = "1/8" };
+        public static Button OnePer4t = new Button { number = 37, message = Message.CC, color = true, name = "1/4t" };
+        public static Button OnePer4 = new Button { number = 36, message = Message.CC, color = true, name = "1/4" };
         public static List<Button> OnePerAll = new List<Button>
         {
             Buttons.OnePer32t,
@@ -232,14 +242,6 @@ namespace AbletonPush2
             Buttons.OnePer4t,
             Buttons.OnePer4,
         };
-        public static Button OnePer32t = new Button { number = 43, message = Message.CC, color = true, name = "1/32t" };
-        public static Button OnePer32 = new Button { number = 42, message = Message.CC, color = true, name = "1/32" };
-        public static Button OnePer16t = new Button { number = 41, message = Message.CC, color = true, name = "1/16t" };
-        public static Button OnePer16 = new Button { number = 40, message = Message.CC, color = true, name = "1/16" };
-        public static Button OnePer8t = new Button { number = 39, message = Message.CC, color = true, name = "1/8t" };
-        public static Button OnePer8 = new Button { number = 38, message = Message.CC, color = true, name = "1/8" };
-        public static Button OnePer4t = new Button { number = 37, message = Message.CC, color = true, name = "1/4t" };
-        public static Button OnePer4 = new Button { number = 36, message = Message.CC, color = true, name = "1/4" };
         public static Button Setup = new Button { number = 30, message = Message.CC, color = false, name = "Setup" };
         public static Button User = new Button { number = 59, message = Message.CC, color = false, name = "User" };
         public static Button AddDevice = new Button { number = 52, message = Message.CC, color = false, name = "Add Device" };
