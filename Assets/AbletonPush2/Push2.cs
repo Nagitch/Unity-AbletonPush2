@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using MidiJack;
 
 namespace AbletonPush2
@@ -23,14 +24,18 @@ namespace AbletonPush2
         public static void SetMidiOutDevice(uint deviceId)
         {
             MidiOutDeviceId = deviceId;
+            Debug.Log(MidiOutDeviceId.ToString("X8"));
         }
         public static float GetPad(Pad pad)
         {
             return MidiMaster.GetKey(pad.number);
         }
 
-        public static void SetLED(Part part)
+        public static void SetLED(Part part, int colorIndex = LED.Color.Mono.Black, int animationControlIndex = LED.Animation.None)
         {
+            var channel = (MidiJack.MidiChannel)animationControlIndex;
+            var color = (float)colorIndex / (float)127;
+            MidiMaster.SendNoteOn(MidiOutDeviceId, channel, part.number, color);
         }
     }
 }

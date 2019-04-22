@@ -4,15 +4,18 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
+using AbletonPush2;
 
 public class MIDIManager : MonoBehaviour
 {
     private static List<MidiDevice> midiInDevices;
     public static List<MidiDevice> MidiInDevices { get { return midiInDevices; } }
     public static int midiInDeviceCount;
+    public static int midiInDeviceCountBefore;
     private static List<MidiDevice> midiOutDevices;
     public static List<MidiDevice> MidiOutDevices { get { return midiOutDevices; } }
     public static int midiOutDeviceCount;
+    public static int midiOutDeviceCountBefore;
 
     public class MidiDevice
     {
@@ -33,6 +36,11 @@ public class MIDIManager : MonoBehaviour
             return id.ToString("X8") + ": " + name;
         }
     };
+
+    public static void SetPush2MIDIOutDevice(int deviceIndex)
+    {
+        Push2.SetMidiOutDevice(midiOutDevices[deviceIndex].Id);
+    }
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -70,6 +78,9 @@ public class MIDIManager : MonoBehaviour
             MidiDevice mo = new MidiDevice(id, name);
             midiOutDevices.Add(mo);
         }
+
+        midiInDeviceCountBefore = midiInDeviceCount;
+        midiOutDeviceCountBefore = midiOutDeviceCount;
     }
 
     #region Native Plugin Interface
