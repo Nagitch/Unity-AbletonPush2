@@ -12,6 +12,8 @@ public class DropDownMIDIDevice : MonoBehaviour
         MIDIOutDevices,
     }
 
+    private int deviceCountBefore = 0;
+
     public ListAs listAs = ListAs.MIDIInDevices;
 
     // Start is called before the first frame update
@@ -31,14 +33,26 @@ public class DropDownMIDIDevice : MonoBehaviour
         Dropdown dd = GetComponent<Dropdown>();
         dd.ClearOptions();
 
+        int? push2OptionIndex = null;
         int deviceCount = listAs == ListAs.MIDIInDevices ? MIDIManager.midiInDeviceCount : MIDIManager.midiOutDeviceCount;
         for (var i = 0; i < deviceCount; i++)
         {
             var option = listAs == ListAs.MIDIInDevices ? MIDIManager.MidiInDevices[i] : MIDIManager.MidiOutDevices[i];
             dd.options.Add(new Dropdown.OptionData(option.ToString()));
+            if (option.Name.IndexOf("Ableton Push 2") == 0)
+            {
+                push2OptionIndex = i;
+            }
         }
 
         dd.RefreshShownValue();
+
+        if (deviceCount != deviceCountBefore && push2OptionIndex != null)
+        {
+            dd.value = (int)push2OptionIndex;
+        }
+
+        deviceCountBefore = deviceCount;
     }
 
     public void OnValueChanged(Dropdown dropdown)
