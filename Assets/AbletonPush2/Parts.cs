@@ -19,12 +19,40 @@ namespace AbletonPush2
         public string name = null;
         public int number;
         public Message message;
-        public Boolean? color = null;
+        public Boolean color;
+
+        /// <summary>
+        /// returns deep copy
+        /// </summary>
+        /// <returns></returns>
+        public virtual Part Clone()
+        {
+            Part part = new Part();
+            part.name = this.name;
+            part.number = this.number;
+            part.message = this.message;
+            part.color = this.color;
+            return part;
+        }
     }
 
     public class Pad : Part
     {
-        public float? pressure; // off=0.0 to max=1.0
+        /// <summary>
+        /// pad pressure. off=0.0 to max=1.0
+        /// </summary>
+        public float pressure;
+
+        public new Pad Clone()
+        {
+            Pad pad = new Pad();
+            pad.name = this.name;
+            pad.number = this.number;
+            pad.message = this.message;
+            pad.color = this.color;
+            pad.pressure = this.pressure;
+            return pad;
+        }
     }
     public static class Pads
     {
@@ -163,7 +191,7 @@ namespace AbletonPush2
 
     public class Button : Part
     {
-        public Boolean? pressed; // true as pressed
+        public Boolean pressed; // true as pressed
     }
     public static class Buttons
     {
@@ -255,6 +283,13 @@ namespace AbletonPush2
         public static Button Down = new Button { number = 47, message = Message.CC, color = false, name = "Down" };
         public static Button Left = new Button { number = 44, message = Message.CC, color = false, name = "Left" };
         public static Button Right = new Button { number = 45, message = Message.CC, color = false, name = "Right" };
+
+        public static List<Button> ArrowUpperAll = new List<Button> {
+            Buttons.Up,
+            Buttons.Down,
+            Buttons.Left,
+            Buttons.Right,
+        };
         public static Button Repeat = new Button { number = 56, message = Message.CC, color = false, name = "Repeat" };
         public static Button Accent = new Button { number = 57, message = Message.CC, color = false, name = "Accent" };
         public static Button Scale = new Button { number = 58, message = Message.CC, color = false, name = "Scale" };
@@ -265,20 +300,26 @@ namespace AbletonPush2
         public static Button OctaveDown = new Button { number = 54, message = Message.CC, color = false, name = "Octave Down" };
         public static Button PageLeft = new Button { number = 62, message = Message.CC, color = false, name = "Page Left" };
         public static Button PageRight = new Button { number = 63, message = Message.CC, color = false, name = "Page Right" };
+        public static List<Button> ArrowLowerAll = new List<Button> {
+            Buttons.OctaveUp,
+            Buttons.OctaveDown,
+            Buttons.PageLeft,
+            Buttons.PageRight,
+        };
         public static Button Shift = new Button { number = 49, message = Message.CC, color = false, name = "Shift" };
         public static Button Select = new Button { number = 48, message = Message.CC, color = false, name = "Select" };
     }
 
     public class RotaryEncoder : Part
     {
-        public float? step; // turned step 0.0-1.0, minus as left
+        public float step; // turned step 0.0-1.0, minus as left
         public int position;
         public Touch touch;
     }
 
     public class Touch : Part
     {
-        public Boolean? touched; // true as touched
+        public Boolean touched; // true as touched
     }
     public static class RotaryEncoders
     {
@@ -295,13 +336,13 @@ namespace AbletonPush2
         public static RotaryEncoder MasterEncoder = new RotaryEncoder { number = 79, message = Message.CC, position = 11, name = "Master Encoder", touch = new Touch { number = 8, message = Message.CC } };
     }
 
-    public static class Slider
+    public class TouchStrip
     {
-        public static Boolean? touched; // true as touched
-        public static float? bend; // -1.0 to 1.0
+        public static Boolean touched; // true as touched
+        public static float bend; // -1.0 to 1.0
         public static int number = 12;
         public static Message message = Message.PichBend;
-        public static string name = "Slider";
+        public static string name = "Touch Strip";
     };
 }
 

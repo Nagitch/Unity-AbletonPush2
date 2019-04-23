@@ -29,11 +29,15 @@ and also parts/controls namings are based on this resource [Push2-map.json](http
 
 ### Receive messages from Push 2
 
-- GetPad(Pad)
-- GetButton(Button)
-- GetTouchStrip(TouchStrip)
-- GetEncoder(Encoder)
-- GetEncoderTouch(EncoderTouch)
+- Pad GetPad(Pad)
+- float GetPadPressure(Pad)
+- float GetPadAfterTouch(Pad)
+- Button GetButton(Button)
+- bool GetButtonPressed(Button)
+- TouchStrip GetTouchStrip(TouchStrip)
+- RotaryEncoder GetEncoder(RotaryEncoder)
+- float GetEncoderStep(Encoder)
+- bool GetEncoderTouched(EncoderTouch)
 
 
 Their delegates are available.

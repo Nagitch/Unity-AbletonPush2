@@ -6,7 +6,8 @@ using AbletonPush2;
 public class PseudoPads : MonoBehaviour
 {
     public GameObject padBase;
-    public float padSpacing = 0.03f;
+    public float padSpacingX = 0.03f;
+    public float padSpacingY = 0.03f;
 
     // Start is called before the first frame update
     void Start()
@@ -14,7 +15,7 @@ public class PseudoPads : MonoBehaviour
         int index = 0;
         Pads.All.ForEach(e =>
         {
-            Vector3 pos = new Vector3(transform.position.x + (index % 8) * padSpacing, transform.position.y + (Mathf.FloorToInt(index / 8)) * padSpacing, transform.position.z);
+            Vector3 pos = new Vector3(transform.position.x + (index % 8) * padSpacingX, transform.position.y + (Mathf.FloorToInt(index / 8)) * padSpacingY, transform.position.z);
             GameObject go = Instantiate(padBase, pos, Quaternion.identity, this.transform);
             go.transform.Find("PadVisual").gameObject.GetComponent<PseudoPad>().pad = e;
             index++;

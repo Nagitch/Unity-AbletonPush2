@@ -12,7 +12,8 @@ public class PseudoPad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float pressure = Push2.GetPad(pad);
+        // float pressure = Push2.GetPadPressure(pad);
+        float pressure = (float)Push2.GetPad(pad).pressure;
         transform.localScale = new Vector3(1.0f + pressure, 1.0f + pressure, 1.0f + pressure);
 
         if (pressureBefore != pressure)

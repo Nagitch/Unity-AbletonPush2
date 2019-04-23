@@ -24,11 +24,29 @@ namespace AbletonPush2
         public static void SetMidiOutDevice(uint deviceId)
         {
             MidiOutDeviceId = deviceId;
-            Debug.Log(MidiOutDeviceId.ToString("X8"));
         }
-        public static float GetPad(Pad pad)
+
+        public static Pad GetPad(Pad pad)
+        {
+            Pad p = pad.Clone();
+            p.pressure = MidiMaster.GetKey(pad.number);
+            return p;
+        }
+        public static float GetPadPressure(Pad pad)
         {
             return MidiMaster.GetKey(pad.number);
+        }
+        public static float GetButton(Button button)
+        {
+            return MidiMaster.GetKnob(button.number);
+        }
+        public static float GetTouchStrip()
+        {
+            return MidiMaster.GetKey(TouchStrip.number);
+        }
+        public static float GetEncoder(RotaryEncoder encoder)
+        {
+            return MidiMaster.GetKnob(encoder.number);
         }
 
         public static void SetLED(Part part, int colorIndex = LED.Color.Mono.Black, int animationControlIndex = LED.Animation.None)
@@ -36,6 +54,11 @@ namespace AbletonPush2
             var channel = (MidiJack.MidiChannel)animationControlIndex;
             var color = (float)colorIndex / (float)127;
             MidiMaster.SendNoteOn(MidiOutDeviceId, channel, part.number, color);
+        }
+
+        public static void SetLED(List<Part> parts, int colorIndex = LED.Color.Mono.Black, int animationControlIndex = LED.Animation.None)
+        {
+            parts.ForEach(part => SetLED(part, colorIndex, animationControlIndex));
         }
     }
 }

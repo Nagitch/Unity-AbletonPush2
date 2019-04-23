@@ -534,7 +534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305310457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.29, y: -0.392, z: -0.76}
+  m_LocalPosition: {x: -0.254, y: -0.423, z: -0.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1617360163}
@@ -554,7 +554,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   padBase: {fileID: 6535649091182436395, guid: 21eb327eb19fed74c9717924a6b7dbb3, type: 3}
-  padSpacing: 0.03
+  padSpacingX: 0.028
+  padSpacingY: 0.024
 --- !u!1 &325772007
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &329648189
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1871,7 +1872,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -87.599976, y: -83.29999}
+  m_AnchoredPosition: {x: -87, y: 21.7}
   m_SizeDelta: {x: 160.19, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166529788
@@ -1907,7 +1908,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: select "Ableton Push2" both correctly.
+  m_Text: select "Ableton Push2" correctly.
 --- !u!222 &1166529789
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1933,7 +1934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1171443263
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2272,7 +2273,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.599976, y: 1.7000122}
+  m_AnchoredPosition: {x: -91.599976, y: 90.5}
   m_SizeDelta: {x: 160.19, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1602643354
@@ -2342,7 +2343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1720144638
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2693,7 +2694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.599976, y: -29.299988}
+  m_AnchoredPosition: {x: -11.599976, y: 59.5}
   m_SizeDelta: {x: 320, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1776817010
