@@ -1,21 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using AbletonPush2;
 
-public class PseudoButton : MonoBehaviour
+public class PseudoPush2 : MonoBehaviour
 {
-    public Button button;
-
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

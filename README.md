@@ -61,7 +61,7 @@ Their delegates are available.
 
 ### Pad / Button LEDs
 
-- SetLED(Part\[Pad|Button\], LEDColor, LEDAnimation = LEDAnimation.None)
+- SetLED(\[Pad|Button\], LED.Color, LED.Animation)
 
   Turn LED on / off. LEDAnimation is selectable below, based on [this section in Push2 spec document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#LED%20Animation).
   - None (stop transition)

@@ -37,10 +37,6 @@ public class MIDIManager : MonoBehaviour
         }
     };
 
-    public static void SetPush2MIDIOutDevice(int deviceIndex)
-    {
-        Push2.SetMidiOutDevice(midiOutDevices[deviceIndex].Id);
-    }
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -79,8 +75,34 @@ public class MIDIManager : MonoBehaviour
             midiOutDevices.Add(mo);
         }
 
+        // indicate Push2
+        if (midiOutDeviceCountBefore != midiOutDeviceCount)
+        {
+            for (var i = 0; i < midiOutDeviceCount; i++)
+            {
+                var option = MIDIManager.MidiOutDevices[i];
+                if (option.Name.IndexOf("Ableton Push 2") == 0)
+                {
+                    // push2OptionIndex = i;
+                }
+            }
+
+        }
         midiInDeviceCountBefore = midiInDeviceCount;
         midiOutDeviceCountBefore = midiOutDeviceCount;
+    }
+
+    public static void SetPush2MIDIOutDevice(int deviceIndex)
+    {
+        Push2.SetMidiOutDevice(midiOutDevices[deviceIndex].Id);
+    }
+
+    public static void WakeupPush2()
+    {
+        Push2.SetLED(Pads.All, LED.Color.RGB.Black);
+        Push2.SetLED(Buttons.All, LED.Color.Mono.Black);
+        Push2.SetLED(Pads.All, LED.Color.RGB.LightGray);
+        Push2.SetLED(Buttons.All, LED.Color.Mono.LightGray);
     }
 
     #region Native Plugin Interface

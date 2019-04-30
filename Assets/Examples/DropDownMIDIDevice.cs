@@ -50,6 +50,7 @@ public class DropDownMIDIDevice : MonoBehaviour
         if (deviceCount != deviceCountBefore && push2OptionIndex != null)
         {
             dd.value = (int)push2OptionIndex;
+            MIDIManager.WakeupPush2();
         }
 
         deviceCountBefore = deviceCount;

@@ -96,12 +96,28 @@ namespace AbletonPush2
         {
             var channel = (MidiJack.MidiChannel)animationControlIndex;
             var color = (float)colorIndex / (float)127;
-            MidiMaster.SendNoteOn(MidiOutDeviceId, channel, part.number, color);
+
+            if (part.message == Message.Note)
+            {
+                MidiMaster.SendNoteOn(MidiOutDeviceId, channel, part.number, color);
+            }
+            else if (part.message == Message.CC)
+            {
+                MidiMaster.SendCC(MidiOutDeviceId, channel, part.number, color);
+            }
         }
 
         public static void SetLED(List<Part> parts, int colorIndex = LED.Color.Mono.Black, int animationControlIndex = LED.Animation.None)
         {
             parts.ForEach(part => SetLED(part, colorIndex, animationControlIndex));
+        }
+        public static void SetLED(List<Pad> pads, int colorIndex = LED.Color.RGB.Black, int animationControlIndex = LED.Animation.None)
+        {
+            pads.ForEach(pad => SetLED(pad, colorIndex, animationControlIndex));
+        }
+        public static void SetLED(List<Button> buttons, int colorIndex = LED.Color.Mono.Black, int animationControlIndex = LED.Animation.None)
+        {
+            buttons.ForEach(button => SetLED(button, colorIndex, animationControlIndex));
         }
 
         static void NoteOn(MidiChannel channel, int note, float velocity)

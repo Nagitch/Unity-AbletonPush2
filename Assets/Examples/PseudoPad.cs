@@ -41,6 +41,6 @@ public class PseudoPad : MonoBehaviour
         }
         transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         GetComponent<Renderer>().material.color = Color.gray;
-        Push2.SetLED(pad, LED.Color.RGB.Black);
+        Push2.SetLED(pad, LED.Color.RGB.LightGray);
     }
 }
