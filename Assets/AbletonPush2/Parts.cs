@@ -11,7 +11,7 @@ namespace AbletonPush2
     {
         Note,
         CC,
-        PichBend,
+        PitchBend,
     }
 
     public class Part
@@ -341,7 +341,7 @@ namespace AbletonPush2
         public static Boolean touched; // true as touched
         public static float bend; // -1.0 to 1.0
         public static int number = 12;
-        public static Message message = Message.PichBend;
+        public static Message message = Message.PitchBend;
         public static string name = "Touch Strip";
     };
 }
