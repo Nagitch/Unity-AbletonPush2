@@ -47,8 +47,8 @@ Their delegates are available.
 - ButtonPressedDelegate(Button)
 - ButtonReleasedDelegate(Button)
 - EncoderDelegate(Encoder, movement)
-- EncoderTouchedDelegate(EncoderTouch)
-- EncoderReleasedDelegate(EncoderTouch)
+- EncoderTouchedDelegate(Encoder)
+- EncoderReleasedDelegate(Encoder)
 - TouchStripTouchedDelegate(TouchStrip)
 - TouchStripReleasedDelegate(TouchStrip)
 

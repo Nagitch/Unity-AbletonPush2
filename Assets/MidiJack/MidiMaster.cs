@@ -26,17 +26,20 @@ namespace MidiJack
     public static class MidiMaster
     {
         // MIDI event delegates
-        public static MidiDriver.NoteOnDelegate noteOnDelegate {
+        public static MidiDriver.NoteOnDelegate noteOnDelegate
+        {
             get { return MidiDriver.Instance.noteOnDelegate; }
             set { MidiDriver.Instance.noteOnDelegate = value; }
         }
 
-        public static MidiDriver.NoteOffDelegate noteOffDelegate {
+        public static MidiDriver.NoteOffDelegate noteOffDelegate
+        {
             get { return MidiDriver.Instance.noteOffDelegate; }
             set { MidiDriver.Instance.noteOffDelegate = value; }
         }
 
-        public static MidiDriver.KnobDelegate knobDelegate {
+        public static MidiDriver.KnobDelegate knobDelegate
+        {
             get { return MidiDriver.Instance.knobDelegate; }
             set { MidiDriver.Instance.knobDelegate = value; }
         }

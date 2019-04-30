@@ -11,6 +11,35 @@ namespace AbletonPush2
         public static uint MidiInDeviceId;
         public static uint MidiOutDeviceId;
 
+        public delegate void PadPressedDelegate(Pad pad, float velocity);
+        public static Push2.PadPressedDelegate padPressedDelegate { get; set; }
+
+        public delegate void PadReleasedDelegate(Pad pad);
+        public static Push2.PadReleasedDelegate padReleasedDelegate { get; set; }
+        public delegate void ButtonPressedDelegate(Button button);
+        public static Push2.ButtonPressedDelegate buttonPressedDelegate { get; set; }
+        public delegate void ButtonReleasedDelegate(Button button);
+        public static Push2.ButtonReleasedDelegate buttonReleasedDelegate { get; set; }
+        public delegate void EncoderDelegate(RotaryEncoder encoder, float movement);
+        public static Push2.EncoderDelegate encoderDelegate { get; set; }
+        public delegate void EncoderTouchedDelegate(RotaryEncoder encoder);
+        public static Push2.EncoderTouchedDelegate encoderTouchedDelegate { get; set; }
+        public delegate void EncoderReleasedDelegate(RotaryEncoder encoder);
+        public static Push2.EncoderReleasedDelegate encoderReleasedDelegate { get; set; }
+        public delegate void TouchStripTouchedDelegate(TouchStrip touchStrip);
+        public static Push2.TouchStripTouchedDelegate touchStripTouchedDelegate { get; set; }
+        public delegate void TouchStripReleasedDelegate(TouchStrip touchStrip);
+        public static Push2.TouchStripReleasedDelegate touchStripReleasedDelegate { get; set; }
+
+        static Push2()
+        {
+            // listen MidiJack delegate
+            MidiMaster.noteOnDelegate += NoteOn;
+            MidiMaster.noteOffDelegate += NoteOff;
+            MidiMaster.knobDelegate += Knob;
+            // TODO: unregist delegate
+        }
+
         public static void SetDevice(uint midiInDeviceId, uint midiOutDeviceId)
         {
             MidiInDeviceId = midiInDeviceId;
@@ -60,5 +89,34 @@ namespace AbletonPush2
         {
             parts.ForEach(part => SetLED(part, colorIndex, animationControlIndex));
         }
+
+        static void NoteOn(MidiChannel channel, int note, float velocity)
+        {
+            Pads.All.ForEach(pad =>
+            {
+                if (note != pad.number)
+                {
+                    return;
+                }
+                padPressedDelegate(pad, velocity);
+            });
+        }
+
+        static void NoteOff(MidiChannel channel, int note)
+        {
+            Pads.All.ForEach(pad =>
+            {
+                if (note != pad.number)
+                {
+                    return;
+                }
+                padReleasedDelegate(pad);
+            });
+        }
+
+        static void Knob(MidiChannel channel, int knobNumber, float knobValue)
+        {
+        }
+
     }
 }
