@@ -334,6 +334,19 @@ namespace AbletonPush2
         public static RotaryEncoder Track7Encoder = new RotaryEncoder { number = 77, message = Message.CC, position = 9, name = "Track7 Encoder", touch = new Touch { number = 6, message = Message.CC } };
         public static RotaryEncoder Track8Encoder = new RotaryEncoder { number = 78, message = Message.CC, position = 10, name = "Track8 Encoder", touch = new Touch { number = 7, message = Message.CC } };
         public static RotaryEncoder MasterEncoder = new RotaryEncoder { number = 79, message = Message.CC, position = 11, name = "Master Encoder", touch = new Touch { number = 8, message = Message.CC } };
+        public static List<RotaryEncoder> All = new List<RotaryEncoder> {
+            RotaryEncoders.TempoEncoder,
+            RotaryEncoders.SwingEncoder,
+            RotaryEncoders.Track1Encoder,
+            RotaryEncoders.Track2Encoder,
+            RotaryEncoders.Track3Encoder,
+            RotaryEncoders.Track4Encoder,
+            RotaryEncoders.Track5Encoder,
+            RotaryEncoders.Track6Encoder,
+            RotaryEncoders.Track7Encoder,
+            RotaryEncoders.Track8Encoder,
+            RotaryEncoders.MasterEncoder,
+        };
     }
 
     public class TouchStrip

@@ -40,16 +40,30 @@ namespace AbletonPush2
             // TODO: unregist delegate
         }
 
+        /// <summary>
+        /// indicate Push2 device id
+        /// </summary>
+        /// <param name="midiInDeviceId"></param>
+        /// <param name="midiOutDeviceId"></param>
         public static void SetDevice(uint midiInDeviceId, uint midiOutDeviceId)
         {
-            MidiInDeviceId = midiInDeviceId;
-            MidiOutDeviceId = midiOutDeviceId;
+            SetMidiInDevice(midiInDeviceId);
+            SetMidiOutDevice(midiOutDeviceId);
         }
 
+        /// <summary>
+        /// indicate Push2 MIDI IN device id
+        /// </summary>
+        /// <param name="deviceId"></param>
         public static void SetMidiInDevice(uint deviceId)
         {
             MidiInDeviceId = deviceId;
         }
+
+        /// <summary>
+        /// indicate Push2 MIDI OUT device id
+        /// </summary>
+        /// <param name="deviceId"></param>
         public static void SetMidiOutDevice(uint deviceId)
         {
             MidiOutDeviceId = deviceId;
@@ -100,6 +114,15 @@ namespace AbletonPush2
                 }
                 padPressedDelegate(pad, velocity);
             });
+
+            RotaryEncoders.All.ForEach(encoder =>
+            {
+                if (note != encoder.number)
+                {
+                    return;
+                }
+                encoderTouchedDelegate(encoder);
+            });
         }
 
         static void NoteOff(MidiChannel channel, int note)
@@ -111,6 +134,15 @@ namespace AbletonPush2
                     return;
                 }
                 padReleasedDelegate(pad);
+            });
+
+            RotaryEncoders.All.ForEach(encoder =>
+            {
+                if (note != encoder.number)
+                {
+                    return;
+                }
+                encoderReleasedDelegate(encoder);
             });
         }
 
