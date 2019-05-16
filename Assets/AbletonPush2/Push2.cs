@@ -128,7 +128,7 @@ namespace AbletonPush2
                 {
                     return;
                 }
-                padPressedDelegate(pad, velocity);
+                if (padPressedDelegate != null) padPressedDelegate(pad, velocity);
             });
 
             RotaryEncoders.All.ForEach(encoder =>
@@ -137,7 +137,7 @@ namespace AbletonPush2
                 {
                     return;
                 }
-                encoderTouchedDelegate(encoder);
+                if (encoderTouchedDelegate != null) encoderTouchedDelegate(encoder);
             });
         }
 
@@ -149,7 +149,7 @@ namespace AbletonPush2
                 {
                     return;
                 }
-                padReleasedDelegate(pad);
+                if (padReleasedDelegate != null) padReleasedDelegate(pad);
             });
 
             RotaryEncoders.All.ForEach(encoder =>
@@ -158,7 +158,7 @@ namespace AbletonPush2
                 {
                     return;
                 }
-                encoderReleasedDelegate(encoder);
+                if (encoderReleasedDelegate != null) encoderReleasedDelegate(encoder);
             });
         }
 
