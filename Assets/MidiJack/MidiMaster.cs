@@ -26,22 +26,33 @@ namespace MidiJack
     public static class MidiMaster
     {
         // MIDI event delegates
-        public static MidiDriver.NoteOnDelegate noteOnDelegate
-        {
+        public static MidiDriver.NoteOnDelegate noteOnDelegate {
             get { return MidiDriver.Instance.noteOnDelegate; }
             set { MidiDriver.Instance.noteOnDelegate = value; }
         }
 
-        public static MidiDriver.NoteOffDelegate noteOffDelegate
-        {
+        public static MidiDriver.NoteOffDelegate noteOffDelegate {
             get { return MidiDriver.Instance.noteOffDelegate; }
             set { MidiDriver.Instance.noteOffDelegate = value; }
         }
 
-        public static MidiDriver.KnobDelegate knobDelegate
-        {
+        public static MidiDriver.KnobDelegate knobDelegate {
             get { return MidiDriver.Instance.knobDelegate; }
             set { MidiDriver.Instance.knobDelegate = value; }
+        }
+
+        public static MidiDriver.PitchBendDelegate pitchBendDelegate {
+            get { return MidiDriver.Instance.pitchBendDelegate; }
+            set { MidiDriver.Instance.pitchBendDelegate = value; }
+        }
+        public static MidiDriver.PolyAfterTouchDelegate polyAfterTouchDelegate {
+            get { return MidiDriver.Instance.polyAfterTouchDelegate; }
+            set { MidiDriver.Instance.polyAfterTouchDelegate = value; }
+        }
+
+        public static MidiDriver.ChannelAfterTouchDelegate channelAfterTouchDelegate {
+            get { return MidiDriver.Instance.channelAfterTouchDelegate; }
+            set { MidiDriver.Instance.channelAfterTouchDelegate = value; }
         }
 
         // Returns the key state (on: velocity, off: zero).
@@ -97,6 +108,38 @@ namespace MidiJack
         public static float GetKnob(int knobNumber, float defaultValue = 0)
         {
             return MidiDriver.Instance.GetKnob(MidiChannel.All, knobNumber, defaultValue);
+        }
+
+        public static float GetBend(MidiChannel channel)
+        {
+            return MidiDriver.Instance.GetBend(channel);
+        }
+
+        public static float GetBend()
+        {
+            return MidiDriver.Instance.GetBend(MidiChannel.All);
+        }
+
+        // Returns the after touch (polyphonic) pressure.
+        public static float GetPolyAfterTouch(MidiChannel channel, int noteNumber)
+        {
+            return MidiDriver.Instance.GetPolyAfterTouch(channel, noteNumber);
+        }
+
+        public static float GetPolyAfterTouch(int noteNumber)
+        {
+            return MidiDriver.Instance.GetPolyAfterTouch(MidiChannel.All, noteNumber);
+        }
+
+        // Returns the after touch (channel) pressure.
+        public static float GetChannelAfterTouch(MidiChannel channel)
+        {
+            return MidiDriver.Instance.GetChannelAfterTouch(channel);
+        }
+
+        public static float GetChannelAfterTouch()
+        {
+            return MidiDriver.Instance.GetChannelAfterTouch(MidiChannel.All);
         }
 
         public static void SendNoteOn(uint deviceID, MidiChannel channel, int noteNumber, float velocity)
