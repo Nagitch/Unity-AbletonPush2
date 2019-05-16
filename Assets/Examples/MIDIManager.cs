@@ -102,7 +102,13 @@ public class MIDIManager : MonoBehaviour
         Push2.SetLED(Pads.All, LED.Color.RGB.Black);
         Push2.SetLED(Buttons.All, LED.Color.Mono.Black);
         Push2.SetLED(Pads.All, LED.Color.RGB.LightGray);
-        Push2.SetLED(Buttons.All, LED.Color.Mono.LightGray);
+        Push2.SetLED(Buttons.All, LED.Color.Mono.DarkGray);
+        Push2.SetLED(Buttons.OnePerAll, LED.Color.RGB.Green);
+        Push2.SetLED(Buttons.Record, LED.Color.RGB.Red);
+        Push2.SetLED(Buttons.Play, LED.Color.RGB.Black);
+        Push2.SetLED(Buttons.Play, LED.Color.RGB.Green, LED.Animation.PulsingQuarter);
+        Push2.SetLED(Buttons.UpperRowAll, LED.Color.RGB.Blue);
+        Push2.SetLED(Buttons.LowerRowAll, LED.Color.RGB.Red);
     }
 
     #region Native Plugin Interface
