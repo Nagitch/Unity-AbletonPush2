@@ -1,7 +1,8 @@
 # Unity-AbletonPush2
 
 MIDI interface for controls Ableton Push2 from Unity.
-(no display control. sorry)
+
+![Push2](https://github.com/Nagitch/Unity-AbletonPush2/blob/orphan-docs/images/push2.jpg)
 
 ## Limitations
 
@@ -14,7 +15,7 @@ MIDI interface for controls Ableton Push2 from Unity.
 
 ## Installation
 
-- Unity-AbletonPush2 is depend on MIDIJack. download and import package from here.
+- Unity-AbletonPush2 is depends on [Nagitch/MIDIJack](https://github.com/Nagitch/MidiJack). download and import package from [releases](https://github.com/Nagitch/MidiJack/releases).
 - download and import package Unity-AbletonPush2 from here.
 
 ## API Reference
@@ -126,13 +127,12 @@ Their delegates are available.
   Turn LED on / off, with color and animation.
 
   ```cs
-  using AbletonPush2;
-      // Turn on all pad LEDs to white.
-      SetLED(Pad.All, LED.Color.RGB.White);
-      // Turn on pad of bottom, left corner positioned to Red, blinking 16 beat
-      SetLED(Pad.S8T1, LED.Color.RGB.Red, LEDAnimation.Blinking16th);
-      // turn off TapTempo button LED. LEDColor Black means turn off
-      SetLED(Button.TapTempo, LED.Color.Mono.Black);
+  // Turn on all pad LEDs to white.
+  SetLED(Pad.All, LED.Color.RGB.White);
+  // Turn on pad of bottom, left corner positioned to Red, blinking 16 beat
+  SetLED(Pad.S8T1, LED.Color.RGB.Red, LEDAnimation.Blinking16th);
+  // turn off TapTempo button LED. LEDColor Black means turn off
+  SetLED(Button.TapTempo, LED.Color.Mono.Black);
   ```
 
   `LEDColor.RGB.xxx` is available only RGB LEDs. you can see what button/control has RGBLED in here. [Push Interface document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#MIDI%20Mapping)
@@ -143,7 +143,7 @@ Their delegates are available.
 
   ![ColorPallet64-127](https://github.com/Nagitch/Unity-AbletonPush2/blob/orphan-docs/images/color-pallet-2.jpeg)
 
-  LED.Animation is selectable below, based on [this section in Push2 spec document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#LED%20Animation).
+  LED.Animation is selectable below, from [this section in Push2 spec document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#LED%20Animation).
 
   - LED.Animation.None (stop transition)
   - LED.Animation.1shot24th
