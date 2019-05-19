@@ -85,7 +85,7 @@ namespace AbletonPush2
         }
         public static float GetTouchStrip()
         {
-            return MidiMaster.GetKey(TouchStrip.number);
+            return MidiMaster.GetBend();
         }
         public static float GetEncoder(RotaryEncoder encoder)
         {
