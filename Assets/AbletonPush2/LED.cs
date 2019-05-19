@@ -23,6 +23,8 @@ namespace AbletonPush2
             public static class RGB
             {
                 public const int Black = 0;
+                public const int Yellow = 70;
+                public const int LightBlue = 95;
                 public const int White = 122;
                 public const int LightGray = 123;
                 public const int DarkGray = 124;

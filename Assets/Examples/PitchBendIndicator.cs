@@ -7,7 +7,7 @@ public class PitchBendIndicator : MonoBehaviour
 {
     void Update()
     {
-        var pos = Push2.GetTouchStrip();
+        var pos = Push2.GetTouchStripPosition();
         this.transform.localPosition = new Vector3(transform.localPosition.x, pos * 0.5f, transform.localPosition.z);
     }
 }

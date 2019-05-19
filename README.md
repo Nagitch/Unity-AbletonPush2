@@ -31,10 +31,10 @@ and also parts/controls namings are based on this resource [Push2-map.json](http
 
 - Pad GetPad(Pad)
 - float GetPadPressure(Pad)
-- float GetPadAfterTouch(Pad)
+- float GetAfterTouchPressure()
 - Button GetButton(Button)
-- bool GetButtonPressed(Button)
 - TouchStrip GetTouchStrip(TouchStrip)
+- float GetTouchStripPosition()
 - RotaryEncoder GetEncoder(RotaryEncoder)
 - float GetEncoderStep(Encoder)
 - bool GetEncoderTouched(EncoderTouch)
@@ -51,6 +51,7 @@ Their delegates are available.
 - EncoderReleasedDelegate(Encoder)
 - TouchStripTouchedDelegate(TouchStrip)
 - TouchStripReleasedDelegate(TouchStrip)
+- AfterTouchDelegate(pressure)
 
 
 ### Synchronization / clock
@@ -96,4 +97,11 @@ using AbletonPush2;
     SetLED(LED.Button.UpperRow1, LEDColor.Black);
 ```
 
-`LEDColor.RGB.xxx` is available only RGBLEDs. you can see what button/control has RGBLED in here. [Push Interface document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#MIDI%20Mapping)
+`LEDColor.RGB.xxx` is available only RGB LEDs. you can see what button/control has RGBLED in here. [Push Interface document](https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc#MIDI%20Mapping)
+
+
+and, you can indicate color number below, instead of LEDColor.RGB definitions. based on Push2 default color pallet.
+
+![ColorPallet0-63](https://github.com/Nagitch/Unity-AbletonPush2/blob/orphan-docs/images/color-pallet-1.jpeg)
+
+![ColorPallet64-127](https://github.com/Nagitch/Unity-AbletonPush2/blob/orphan-docs/images/color-pallet-2.jpeg)

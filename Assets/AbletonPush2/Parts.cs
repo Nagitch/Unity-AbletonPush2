@@ -192,6 +192,17 @@ namespace AbletonPush2
     public class Button : Part
     {
         public Boolean pressed; // true as pressed
+
+        public new Button Clone()
+        {
+            Button button = new Button();
+            button.name = this.name;
+            button.number = this.number;
+            button.message = this.message;
+            button.color = this.color;
+            button.pressed = this.pressed;
+            return button;
+        }
     }
     public static class Buttons
     {
@@ -380,14 +391,37 @@ namespace AbletonPush2
 
     public class RotaryEncoder : Part
     {
-        public float step; // turned step 0.0-1.0, minus as left
+        public float step; // turned step -1.0 to 1.0, minus as left
         public int position;
         public Touch touch;
+
+        public new RotaryEncoder Clone()
+        {
+            RotaryEncoder rotaryEncoder = new RotaryEncoder();
+            rotaryEncoder.name = this.name;
+            rotaryEncoder.number = this.number;
+            rotaryEncoder.message = this.message;
+            rotaryEncoder.color = this.color;
+            rotaryEncoder.step = this.step;
+            rotaryEncoder.position = this.position;
+            rotaryEncoder.touch = this.touch;
+            return rotaryEncoder;
+        }
     }
 
     public class Touch : Part
     {
         public Boolean touched; // true as touched
+        public new Touch Clone()
+        {
+            Touch touch = new Touch();
+            touch.name = this.name;
+            touch.number = this.number;
+            touch.message = this.message;
+            touch.color = this.color;
+            touch.touched = this.touched;
+            return touch;
+        }
     }
     public static class RotaryEncoders
     {
@@ -419,11 +453,27 @@ namespace AbletonPush2
 
     public class TouchStrip
     {
-        public static Boolean touched; // true as touched
-        public static float bend; // -1.0 to 1.0
-        public static int number = 12;
-        public static Message message = Message.PitchBend;
-        public static string name = "Touch Strip";
+        public Boolean touched; // true as touched
+        public float bend; // -1.0 to 1.0
+        public int number = 12;
+        public Message message = Message.PitchBend;
+        public string name = "Touch Strip";
+
+        public TouchStrip Clone()
+        {
+            TouchStrip t = new TouchStrip();
+            t.touched = this.touched;
+            t.bend = this.bend;
+            t.number = this.number;
+            t.message = this.message;
+            t.name = this.name;
+            return t;
+        }
     };
+
+    public class _TouchStrip
+    {
+        public static TouchStrip touchStrip = new TouchStrip();
+    }
 }
 

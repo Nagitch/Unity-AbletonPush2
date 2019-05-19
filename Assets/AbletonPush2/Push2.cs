@@ -13,9 +13,10 @@ namespace AbletonPush2
 
         public delegate void PadPressedDelegate(Pad pad, float velocity);
         public static Push2.PadPressedDelegate padPressedDelegate { get; set; }
-
         public delegate void PadReleasedDelegate(Pad pad);
         public static Push2.PadReleasedDelegate padReleasedDelegate { get; set; }
+        public delegate void AfterTouchDelegate(float pressure);
+        public static Push2.AfterTouchDelegate afterTouchDelegate { get; set; }
         public delegate void ButtonPressedDelegate(Button button);
         public static Push2.ButtonPressedDelegate buttonPressedDelegate { get; set; }
         public delegate void ButtonReleasedDelegate(Button button);
@@ -37,6 +38,7 @@ namespace AbletonPush2
             MidiMaster.noteOnDelegate += NoteOn;
             MidiMaster.noteOffDelegate += NoteOff;
             MidiMaster.knobDelegate += Knob;
+            MidiMaster.channelAfterTouchDelegate += ChannelAfterTouch;
             // TODO: unregist delegate
         }
 
@@ -79,17 +81,40 @@ namespace AbletonPush2
         {
             return MidiMaster.GetKey(pad.number);
         }
+        // get channel after touch. this API can't indicate what pad is pressed
+        public static float GetAfterTouchPressure()
+        {
+            // TODO: support PolyAfterTouch
+            return MidiMaster.GetChannelAfterTouch();
+        }
         public static float GetButton(Button button)
         {
             return MidiMaster.GetKnob(button.number);
         }
-        public static float GetTouchStrip()
+        public static TouchStrip GetTouchStrip()
+        {
+            TouchStrip t = _TouchStrip.touchStrip.Clone();
+            t.bend = MidiMaster.GetBend();
+            return t;
+        }
+        public static float GetTouchStripPosition()
         {
             return MidiMaster.GetBend();
         }
-        public static float GetEncoder(RotaryEncoder encoder)
+        public static RotaryEncoder GetEncoder(RotaryEncoder encoder)
         {
-            return MidiMaster.GetKnob(encoder.number);
+            RotaryEncoder e = encoder.Clone();
+            e.step = PolarEncoderValue(MidiMaster.GetKnob(encoder.number));
+            return e;
+        }
+        public static float GetEncoderStep(RotaryEncoder encoder)
+        {
+            return PolarEncoderValue(MidiMaster.GetKnob(encoder.number));
+        }
+
+        public static bool GetEncoderTouched(RotaryEncoder encoder)
+        {
+            return MidiMaster.GetKey(encoder.number) == 1.0f ? true : false;
         }
 
         public static void SetLED(Part part, int colorIndex = LED.Color.Mono.Black, int animationControlIndex = LED.Animation.None)
@@ -128,17 +153,36 @@ namespace AbletonPush2
                 {
                     return;
                 }
-                if (padPressedDelegate != null) padPressedDelegate(pad, velocity);
+                Pad p = pad.Clone();
+                p.pressure = velocity;
+                if (padPressedDelegate != null) padPressedDelegate(p, velocity);
             });
 
             RotaryEncoders.All.ForEach(encoder =>
             {
-                if (note != encoder.number)
+                if (note != encoder.touch.number)
                 {
                     return;
                 }
-                if (encoderTouchedDelegate != null) encoderTouchedDelegate(encoder);
+                RotaryEncoder e = encoder.Clone();
+                e.touch.touched = true;
+                if (encoderTouchedDelegate != null) encoderTouchedDelegate(e);
             });
+
+            if (note == _TouchStrip.touchStrip.number)
+            {
+                TouchStrip t = _TouchStrip.touchStrip.Clone();
+                if (velocity == 1.0f)
+                {
+                    t.touched = true;
+                    if (touchStripTouchedDelegate != null) touchStripTouchedDelegate(t);
+                }
+                else if (velocity == 0.0f)
+                {
+                    t.touched = false;
+                    if (touchStripReleasedDelegate != null) touchStripReleasedDelegate(t);
+                }
+            }
         }
 
         static void NoteOff(MidiChannel channel, int note)
@@ -149,22 +193,57 @@ namespace AbletonPush2
                 {
                     return;
                 }
+                pad.pressure = 0.0f;
                 if (padReleasedDelegate != null) padReleasedDelegate(pad);
             });
 
             RotaryEncoders.All.ForEach(encoder =>
             {
-                if (note != encoder.number)
+                if (note != encoder.touch.number)
                 {
                     return;
                 }
-                if (encoderReleasedDelegate != null) encoderReleasedDelegate(encoder);
+                RotaryEncoder e = encoder.Clone();
+                e.touch.touched = false;
+                if (encoderReleasedDelegate != null) encoderReleasedDelegate(e);
             });
+        }
+
+        static void ChannelAfterTouch(MidiChannel channel, float pressure)
+        {
+            if (afterTouchDelegate != null) afterTouchDelegate(pressure);
         }
 
         static void Knob(MidiChannel channel, int knobNumber, float knobValue)
         {
+            Buttons.All.ForEach(button =>
+            {
+                if (button.number != knobNumber) return;
+                Button b = button.Clone();
+
+                if (knobValue == 1.0f)
+                {
+                    if (buttonPressedDelegate != null) buttonPressedDelegate(b);
+                }
+                else if (knobValue == 0.0f)
+                {
+                    if (buttonReleasedDelegate != null) buttonReleasedDelegate(b);
+                }
+            });
+
+            RotaryEncoders.All.ForEach(encoder =>
+            {
+                if (encoder.number != knobNumber) return;
+                RotaryEncoder e = encoder.Clone();
+                e.step = PolarEncoderValue(knobValue);
+                if (encoderDelegate != null) encoderDelegate(e, e.step);
+            });
         }
 
+        // fixes CC knob value 0.0,1.0 to -1.0, 1.0
+        private static float PolarEncoderValue(float value)
+        {
+            return value <= 0.5f ? value * 2.0f : (value - 1.0f) * 2.0f;
+        }
     }
 }
