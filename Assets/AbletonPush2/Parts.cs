@@ -454,7 +454,7 @@ namespace AbletonPush2
     public class TouchStrip
     {
         public Boolean touched; // true as touched
-        public float bend; // -1.0 to 1.0
+        public float position; // -1.0 to 1.0
         public int number = 12;
         public Message message = Message.PitchBend;
         public string name = "Touch Strip";
@@ -463,7 +463,7 @@ namespace AbletonPush2
         {
             TouchStrip t = new TouchStrip();
             t.touched = this.touched;
-            t.bend = this.bend;
+            t.position = this.position;
             t.number = this.number;
             t.message = this.message;
             t.name = this.name;

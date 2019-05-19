@@ -11,7 +11,7 @@ namespace AbletonPush2
         public static uint MidiInDeviceId;
         public static uint MidiOutDeviceId;
 
-        public delegate void PadPressedDelegate(Pad pad, float velocity);
+        public delegate void PadPressedDelegate(Pad pad, float pressure);
         public static Push2.PadPressedDelegate padPressedDelegate { get; set; }
         public delegate void PadReleasedDelegate(Pad pad);
         public static Push2.PadReleasedDelegate padReleasedDelegate { get; set; }
@@ -21,7 +21,7 @@ namespace AbletonPush2
         public static Push2.ButtonPressedDelegate buttonPressedDelegate { get; set; }
         public delegate void ButtonReleasedDelegate(Button button);
         public static Push2.ButtonReleasedDelegate buttonReleasedDelegate { get; set; }
-        public delegate void EncoderDelegate(RotaryEncoder encoder, float movement);
+        public delegate void EncoderDelegate(RotaryEncoder encoder, float step);
         public static Push2.EncoderDelegate encoderDelegate { get; set; }
         public delegate void EncoderTouchedDelegate(RotaryEncoder encoder);
         public static Push2.EncoderTouchedDelegate encoderTouchedDelegate { get; set; }
@@ -87,26 +87,38 @@ namespace AbletonPush2
             // TODO: support PolyAfterTouch
             return MidiMaster.GetChannelAfterTouch();
         }
-        public static float GetButton(Button button)
+
+        public static Button GetButton(Button button)
         {
-            return MidiMaster.GetKnob(button.number);
+            var b = button.Clone();
+            b.pressed = MidiMaster.GetKnob(button.number) == 1.0f;
+            return b;
         }
+
+        public static bool GetButtonPressed(Button button)
+        {
+            return MidiMaster.GetKnob(button.number) == 1.0f;
+        }
+
         public static TouchStrip GetTouchStrip()
         {
             TouchStrip t = _TouchStrip.touchStrip.Clone();
-            t.bend = MidiMaster.GetBend();
+            t.position = MidiMaster.GetBend();
             return t;
         }
+
         public static float GetTouchStripPosition()
         {
             return MidiMaster.GetBend();
         }
+
         public static RotaryEncoder GetEncoder(RotaryEncoder encoder)
         {
             RotaryEncoder e = encoder.Clone();
             e.step = PolarEncoderValue(MidiMaster.GetKnob(encoder.number));
             return e;
         }
+
         public static float GetEncoderStep(RotaryEncoder encoder)
         {
             return PolarEncoderValue(MidiMaster.GetKnob(encoder.number));
@@ -114,7 +126,7 @@ namespace AbletonPush2
 
         public static bool GetEncoderTouched(RotaryEncoder encoder)
         {
-            return MidiMaster.GetKey(encoder.number) == 1.0f ? true : false;
+            return MidiMaster.GetKey(encoder.touch.number) == 1.0f;
         }
 
         public static void SetLED(Part part, int colorIndex = LED.Color.Mono.Black, int animationControlIndex = LED.Animation.None)
