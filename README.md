@@ -61,7 +61,7 @@ and also parts/controls namings are referred [Push2-map.json](https://github.com
     get button's data, a sort of `GetPad()`. also you can use `Buttons.Play, Buttons.TapTempo, ...` pre-defined indicator.
 
     ```cs
-    var button = Push2.GetButton(Pads.S8T1);
+    var button = Push2.GetButton(Buttons.Play);
     Debug.Log(button.pressed); // true as pressed
     ```
 
