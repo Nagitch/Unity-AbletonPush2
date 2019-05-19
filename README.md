@@ -4,6 +4,8 @@ MIDI interface for controls Ableton Push2 from Unity.
 
 ![Push2](https://github.com/Nagitch/Unity-AbletonPush2/blob/orphan-docs/images/push2.jpg)
 
+![example](https://github.com/Nagitch/Unity-AbletonPush2/blob/orphan-docs/images/example.PNG)
+
 ## Limitations
 
 - No display control
@@ -16,7 +18,7 @@ MIDI interface for controls Ableton Push2 from Unity.
 ## Installation
 
 - Unity-AbletonPush2 is depends on [Nagitch/MIDIJack](https://github.com/Nagitch/MidiJack). download and import package from [releases](https://github.com/Nagitch/MidiJack/releases).
-- download and import package Unity-AbletonPush2 from here.
+- download and import package Unity-AbletonPush2 from [here](https://github.com/Nagitch/Unity-AbletonPush2/releases).
 
 ## API Reference
 
