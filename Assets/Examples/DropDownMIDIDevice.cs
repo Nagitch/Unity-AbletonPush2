@@ -31,10 +31,13 @@ public class DropDownMIDIDevice : MonoBehaviour
     public void RefreshMIDIDeviceList()
     {
         Dropdown dd = GetComponent<Dropdown>();
-        dd.ClearOptions();
 
         int? push2OptionIndex = null;
         int deviceCount = listAs == ListAs.MIDIInDevices ? MIDIManager.midiInDeviceCount : MIDIManager.midiOutDeviceCount;
+
+        if (deviceCount == deviceCountBefore) return;
+
+        dd.ClearOptions();
         for (var i = 0; i < deviceCount; i++)
         {
             var option = listAs == ListAs.MIDIInDevices ? MIDIManager.MidiInDevices[i] : MIDIManager.MidiOutDevices[i];
@@ -45,14 +48,13 @@ public class DropDownMIDIDevice : MonoBehaviour
             }
         }
 
-        dd.RefreshShownValue();
-
-        if (deviceCount != deviceCountBefore && push2OptionIndex != null)
+        if (push2OptionIndex != null)
         {
             dd.value = (int)push2OptionIndex;
             MIDIManager.WakeupPush2();
         }
 
+        dd.RefreshShownValue();
         deviceCountBefore = deviceCount;
     }
 
